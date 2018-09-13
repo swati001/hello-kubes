@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  labels: 
+    app: hellokubes
+  name: hello-kubes
+spec: 
+  containers: 
+    - 
+      image: hello-kubes:latest
+      imagePullPolicy: Never
+      name: hello-kubes
+      ports: 
+        - 
+          containerPort: 8080
+          name: http

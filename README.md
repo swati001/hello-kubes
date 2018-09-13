@@ -50,4 +50,3 @@ Verify the deployment:
 $ kubectl get deployments
 $ kubectl describe deployments
 ```
-We can play with it by updating the deployment or updating PODs etc.

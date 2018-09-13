@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: hellokubes-deployment
+spec: 
+  selector: 
+    matchLabels: 
+      app: hellokubes
+  template: 
+    metadata: 
+      labels: 
+        app: hellokubes
+    spec: 
+      containers: 
+        - 
+          image: "hello-kubes:latest"
+          imagePullPolicy: Never
+          name: hello-kubes
+          ports: 
+          - 
+            containerPort: 8080
+            name: http

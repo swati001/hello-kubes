@@ -50,3 +50,11 @@ Verify the deployment:
 $ kubectl get deployments
 $ kubectl describe deployments
 ```
+create a service using service yml 
+```
+$ kubectl apply -f service.yml
+```
+or by command with out using service.yml
+```
+$ kubectl expose deployment hellokubes-deployment --type=LoadBalancer --name=myservice
+```

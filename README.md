@@ -1,6 +1,6 @@
-# hello-kubes
+# 
 
-# Kubernetes example using simple node.js local docker image
+# hello-kubes: Kubernetes' simple example using local Docker image
 
 To build an image:
 ```
@@ -11,13 +11,13 @@ To verify the Docker image. Run command:
 ```
 $ docker run -p 8080:8080 -i -t hello-kubes:latest 
 ```
-
-you can test it with:
+and test it with:
 ```
 $ curl -v localhost:8080
+which should return 'hello kubernetes!'
 ```
 
-We can stop the docker and now use kubernetes to utilize the local image.
+We can stop the docker and now use kubernetes to utilize our local image.
 
 create the POD using pod.yaml
 ```
@@ -27,7 +27,7 @@ verify the pod created with:
 ```
 $ kubectl get pods
 ```
-describe the pod and check its properties and values
+To see its properties and values
 ```
 $ kubectl describe pod hello-kubes
 ```
@@ -36,11 +36,11 @@ To run the POD which has the container image:
 ```
 $ kubectl exec hello-kubes -i -t -- sh
 ```
-Check the node server running using the container image in POD:
+Verify that the node server is running, using our container in POD:
 ```
 $ curl http://localhost:8080
+which should return 'hello kubernetes!'
 ```
-
 Deploy using Deployment.yaml
 ```
 $ kubectl apply -f Deployment.yaml 
@@ -50,4 +50,3 @@ Verify the deployment:
 $ kubectl get deployments
 $ kubectl describe deployments
 ```
-We can play with it by updating the deployment or updating PODs etc.

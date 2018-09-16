@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: hellokubes-service
+spec: 
+  selector:
+     app: hellokubes-deployment
+  ports: 
+  - name: http
+    protocol: TCP
+    port: 8081
+    targetPort: 8080
+  type: LoadBalancer
+  externalIPs:
+  - 10.10.10.10
